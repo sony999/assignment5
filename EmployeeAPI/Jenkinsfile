@@ -1,21 +1,100 @@
-pipeline {
-    agent any
-    stages {
-        stage('---clean---') {
-            steps {
-                bat "mvn clean"
-            }
-        }
-        stage('--test--') {
-            steps {
-                bat "mvn test"
-            }
-        }
-        stage('--package--') {
-            steps {
-                bat "mvn package"
-            }
-        }
-    }
+
+pipeline{
+
+ 
+agent any
+
+ 
+stages
+
+ 
+{
+
+ 
+stage('Build')
+
+ 
+{
+
+ 
+steps{
+
+ 
+echo "Building the Code.........."
+
+ 
+bat "mvn clean -f C:\\Users\\sonakshikumari\\git\\repository3\\EmployeeAPI\\pom.xml"
+ 
 }
+ 
+}
+
+ 
+stage('Test')
+
+ 
+{
+
+ 
+steps{
+
+ 
+echo "Testing the Code.........."
+
+ 
+bat "mvn test -f C:\\Users\\sonakshikumari\\git\\repository3\\EmployeeAPI\\pom.xml"
+
+ 
+}
+
+ 
+}
+
+ 
+stage('Compile')
+
+ 
+{
+
+ 
+steps{
+
+ 
+echo "Compiling the Project.........."
+
+ 
+bat "mvn compile -f C:\\Users\\sonakshikumari\\git\\repository3\\EmployeeAPI\\pom.xml"
+
+ 
+}
+
+ 
+}
+
+ 
+stage('Deploy')
+
+ 
+{
+
+ 
+steps{
+
+ 
+echo "Deploying the Project.........."
+
+ 
+}
+
+ 
+}
+
+ 
+}
+
+ 
+}
+
+
+
 
